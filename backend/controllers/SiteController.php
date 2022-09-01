@@ -2,6 +2,7 @@
 
 namespace backend\controllers;
 
+use app\models\Post;
 use common\models\LoginForm;
 use Yii;
 use yii\filters\VerbFilter;
@@ -63,7 +64,10 @@ class SiteController extends Controller
     public function actionIndex()
     {
         if(!Yii::$app->user->isGuest) {
-            return $this->render('index');
+            $posts = Post::find()->where(['status' => 1])->all();
+            return $this->render('index', [
+                'posts' => $posts
+            ]);
         }else{
             return $this->redirect('/site/login');
         }
@@ -84,7 +88,7 @@ class SiteController extends Controller
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
+            return $this->goBack(); 
         }
 
         $model->password = '';

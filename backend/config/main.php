@@ -1,4 +1,7 @@
 <?php
+
+use yii\web\UrlRule;
+
 $params = array_merge(
     require __DIR__ . '/../../common/config/params.php',
     require __DIR__ . '/../../common/config/params-local.php',
@@ -37,14 +40,15 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        
+
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                '/web/post-update/<post_id>' => '/web/update'
             ],
         ],
-        
+
     ],
     'params' => $params,
 ];

@@ -20,8 +20,11 @@ class AppAsset extends AssetBundle
         'font-awesome/css/font-awesome.css',
         'css/plugins/iCheck/custom.css',
         'css/plugins/summernote/summernote-bs4.css',
+        'css/plugins/datapicker/datepicker3.css',
+        'css/plugins/footable/footable.core.css',
     ];
     public $js = [
+        
         "js/jquery-3.1.1.min.js",
         "js/popper.min.js",
         "js/bootstrap.js",
@@ -48,7 +51,8 @@ class AppAsset extends AssetBundle
         "js/plugins/touchpunch/jquery.ui.touch-punch.min.js",
         "js/plugins/jvectormap/jquery-jvectormap-2.0.2.min.js",
         "js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js",
-        
+        "js/plugins/datapicker/bootstrap-datepicker.js",
+        "js/plugins/footable/footable.all.min.js",
     ];
     public $depends = [
         'yii\web\YiiAsset',
